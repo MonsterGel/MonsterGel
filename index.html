@@ -1,0 +1,1446 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="page-view-size" content="1280*720"/>
+    <meta charset="UTF-8">
+    <title>叮当学园-首页</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home_style.css">
+</head>
+<body bgcolor="transparent" style="background-color: #000000 transparent;">
+<a href="#" id="grabFocus" style="width: 1px;height: 1px;left: 0px; top: 0px; position: absolute;">.</a>
+<iframe id="to_platform" style="display: none;" src=""></iframe>
+<!--日志打印-->
+<div class="log_view" id="log_view"></div>
+<!--背景-->
+<div class="bg">
+    <img id="background" src="../images/home/other_bg.png"/>
+</div>
+
+<!--瀑布流滚动-->
+<div class="scroller" id="scroller">
+    <!--第一屏-->
+    <div class="first_screen">
+        <div class="logo"><img src="../images/home/logo.png"/></div>
+        <div class="top_area" id="top_area_scroll">
+            <div class="top_area" style="top: 403px;"></div>
+            <div class="top_area" id="top_area">
+                <!--订购-->
+                <div class="item" style="left: 695px;" id="order">
+                    <div class="focus"><img src="../images/home/top_0_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_order.png"/></div>
+                </div>
+                <!--探险模块-->
+                <div class="item" style="left: 695px;display:none;" id="town_module">
+                    <div class="focus"><img src="../images/home/top_0_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_expedition.png"/></div>
+                </div>
+                <!--播放记录-->
+                <div class="item" style="left: 831px;" id="record">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_record.png"/></div>
+                </div>
+                <!--收藏记录-->
+                <div class="item" style="left: 954px;" id="collection">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_collection.png"/></div>
+                </div>
+                <!--搜索-->
+                <div class="item" style="left: 1079px;" id="search">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_search.png"/></div>
+                </div>
+            </div>
+            <!--<div class="top_area" id="top_area">版本2 只有订购
+                &lt;!&ndash;订购&ndash;&gt;
+                <div class="item" style="left: 40px;" id="order">&lt;!&ndash;left: 695px&ndash;&gt;
+                    <div class="focus"><img src="../images/home/top_0_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_order.png"/></div>
+                </div>
+                &lt;!&ndash;探险模块&ndash;&gt;
+                <div class="item" style="left: 694px;display: none;" id="town_module">
+                    <div class="focus"><img src="../images/home/top_0_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_expedition.png"/></div>
+                </div>
+                &lt;!&ndash;播放记录&ndash;&gt;
+                <div class="item" style="left: 831px;display: none;" id="record">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_record.png"/></div>
+                </div>
+                &lt;!&ndash;收藏记录&ndash;&gt;
+                <div class="item" style="left: 954px;display: none;" id="collection">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_collection.png"/></div>
+                </div>
+                &lt;!&ndash;搜索&ndash;&gt;
+                <div class="item" style="left: 1079px;display: none;" id="search">
+                    <div class="focus"><img src="../images/home/top_1_focus.png"/></div>
+                    <div class="pic"><img src="../images/home/top_search.png"/></div>
+                </div>
+            </div>-->
+        </div>
+        <!--叮当影院-->
+        <!--<div class="dingdang_entrance">
+            <div class="item" id="dingdang_entrance" style="display: none;">
+                <div class="focus"><img src="../images/home/dingdang_entrance_focus.png"/></div>
+                <div class="pic"><img id="dingdang_entrance_pic" src="../images/home/dingdang_entrance_day.png"/></div>
+            </div>
+        </div>-->
+
+        <div class="reco_nav_scroll" style="top: 347px;" id="reco_nav_scroll">
+            <!--推荐列表-->
+            <div class="reco_nav_scroll"></div>
+            <div class="recommend_list" style="top: 365px;" id="recommend_list"></div>
+            <!--导航列表-->
+            <div class="navigation" id="navigation"></div>
+            <div class="to_down" id="to_down"></div>
+        </div>
+
+    </div>
+    <!--叮当影院-->
+    <!--<div class="movie_theatre_area" id="movie_theatre_area" style="display: none;">
+        <div class="movie_theatre_title"></div>
+        <div class="small_video">
+            <div class="item" id="small_video">
+                <div class="focus"></div>
+                <div class="pic"><img width="483" height="274" src="../images/demopic/movie_theatre_pic.png"/></div>
+                <div class="player"></div>
+                <div class="order_remind"></div>
+            </div>
+        </div>
+        <div class="channel_list" id="channel_list">
+            <div class="item">
+                <div class="focus"></div>
+                <div class="pic"><img src="../images/demopic/movie_theatre_01.png"/></div>
+            </div>
+            <div class="item" style="left: 198px;">
+                <div class="focus"></div>
+                <div class="pic"><img src="../images/demopic/movie_theatre_01.png"/></div>
+            </div>
+            <div class="item" style="top: 196px;left: 396px;">
+                <div class="focus"></div>
+                <div class="pic"><img src="../images/demopic/movie_theatre_01.png"/></div>
+            </div>
+        </div>
+    </div>-->
+    <!--为您推荐-->
+    <div class="recommend_for_u" id="recommend_for_u_area">
+        <div class="recommend_for_u_title"></div>
+        <div class="item" id="recommend_for_u">
+            <div class="focus"></div>
+            <div class="pic"><img id="recommend_for_u_pic" src=""/></div>
+            <div class="name" id="recommend_for_u_name"></div>
+        </div>
+    </div>
+    <!--明星专辑-->
+    <div class="star_album_title"></div>
+    <div class="star_album" id="star_album"></div>
+    <!--最新热播-->
+    <div class="hot_title"></div>
+    <div class="hot_area" id="hot_area">
+        <div class="h_poster">
+            <div class="item" style="left: 15px" id="hot_0">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_0_pic" src=""/></div>
+                <div class="name" id="hot_0_txt"></div>
+            </div>
+            <div class="item" style="left: 601px" id="hot_1">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_1_pic" src=""/></div>
+                <div class="name" id="hot_1_txt"></div>
+            </div>
+        </div>
+        <div class="v_poster">
+            <div class="item" style="left:35px" id="hot_2">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_2_pic" src=""/></div>
+                <div class="name" id="hot_2_txt"></div>
+            </div>
+
+            <div class="item" style="left:231px" id="hot_3">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_3_pic" src=""/></div>
+                <div class="name" id="hot_3_txt"></div>
+            </div>
+            <div class="item" style="left:427px" id="hot_4">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_4_pic" src=""/></div>
+                <div class="name" id="hot_4_txt"></div>
+            </div>
+            <div class="item" style="left:623px" id="hot_5">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_5_pic" src=""/></div>
+                <div class="name" id="hot_5_txt"></div>
+            </div>
+            <div class="item" style="left:819px" id="hot_6">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_6_pic" src=""/></div>
+                <div class="name" id="hot_6_txt"></div>
+            </div>
+            <div class="item" style="left:1015px" id="hot_7">
+                <div class="focus"></div>
+                <div class="pic"><img id="hot_7_pic" src=""/></div>
+                <div class="name" id="hot_7_txt"></div>
+            </div>
+        </div>
+    </div>
+    <!--宝贝趣玩-->
+    <!--<div class="baby_game_title" style="display: none;"></div>
+    <div class="baby_game_area" id="baby_game_area" style="display: none;">
+&lt;!&ndash;        左侧的图片&ndash;&gt;
+        <div class="game_pic">
+            <div class="item" id="baby_game_0">
+                <div class="focus"></div>
+                <div class="pic"><img src="../images/demopic/baby_game_left_pic.png"/></div>
+            </div>
+        </div>
+        <div class="h_poster">
+            <div class="item" style="top: 26px;" id="baby_game_1">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_1_pic" src="../images/demopic/baby_game_h_pic.png"/></div>
+                <div class="name" id="baby_game_1_txt">熊出没</div>
+            </div>
+            <div class="item" style="top: 290px;" id="baby_game_4">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_4_pic" src="../images/demopic/baby_game_h_pic.png"/></div>
+                <div class="name" id="baby_game_4_txt">熊出没</div>
+            </div>
+        </div>
+        <div class="v_poster">
+            <div class="item" style="top: 26px;left: 820px;" id="baby_game_2">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_2_pic" src="../images/demopic/hot_v_pic_0.png"/></div>
+                <div class="name" id="baby_game_2_txt">萌鸡小队</div>
+            </div>
+            <div class="item" style="top: 26px;left: 1015px;" id="baby_game_3">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_3_pic" src="../images/demopic/hot_v_pic_0.png"/></div>
+                <div class="name" id="baby_game_3_txt">萌鸡小队</div>
+            </div>
+            <div class="item" style="top: 290px;left: 820px;" id="baby_game_5">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_5_pic" src="../images/demopic/hot_v_pic_0.png"/></div>
+                <div class="name" id="baby_game_5_txt">萌鸡小队</div>
+            </div>
+            <div class="item" style="top: 290px;left: 1015px;" id="baby_game_6">
+                <div class="focus"></div>
+                <div class="pic"><img id="baby_game_6_pic" src="../images/demopic/hot_v_pic_0.png"/></div>
+                <div class="name" id="baby_game_6_txt">萌鸡小队</div>
+            </div>
+        </div>
+    </div>-->
+    <!--动漫电影大片-->
+    <div class="cartoon_movie_title"></div>
+    <div class="cartoon_movie_area" id="cartoon_movie_area">
+        <div class="h_poster">
+            <div class="item" style="left: 15px" id="cartoon_movie_0">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_0_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_0_txt"></div>
+            </div>
+            <div class="item" style="left: 601px" id="cartoon_movie_1">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_1_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_1_txt"></div>
+            </div>
+        </div>
+        <div class="v_poster">
+            <div class="item" style="left:35px" id="cartoon_movie_2">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_2_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_2_txt"></div>
+            </div>
+            <div class="item" style="left:231px" id="cartoon_movie_3">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_3_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_3_txt"></div>
+            </div>
+            <div class="item" style="left:427px" id="cartoon_movie_4">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_4_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_4_txt"></div>
+            </div>
+            <div class="item" style="left:623px" id="cartoon_movie_5">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_5_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_5_txt"></div>
+            </div>
+            <div class="item" style="left:819px" id="cartoon_movie_6">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_6_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_6_txt"></div>
+            </div>
+            <div class="item" style="left:1015px" id="cartoon_movie_7">
+                <div class="focus"></div>
+                <div class="pic"><img id="cartoon_movie_7_pic" src=""/></div>
+                <div class="name" id="cartoon_movie_7_txt"></div>
+            </div>
+        </div>
+    </div>
+    <!--爸妈信赖的宝贝动画-->
+    <div class="parent_cartoon_title"></div>
+    <div class="parent_cartoon_area" id="parent_recommend_area">
+        <div class="parent_recommend"><!--../images/demopic/parent_recommend_pic.png-->
+            <div class="item" style="left: 43px;" id="parent_recommend_0">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_0_pic" src=""/></div>
+                <div class="shadow"></div>
+                <div class="name" id="parent_recommend_0_txt"></div>
+            </div>
+            <div class="item" style="left: 279px;" id="parent_recommend_1">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_1_pic" src=""/></div>
+                <div class="shadow"></div>
+                <div class="name" id="parent_recommend_1_txt"></div>
+            </div>
+            <div class="item" style="left: 515px;" id="parent_recommend_2">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_2_pic" src=""/></div>
+                <div class="shadow"></div>
+                <div class="name" id="parent_recommend_2_txt"></div>
+            </div>
+            <div class="item" style="left: 751px;" id="parent_recommend_3">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_3_pic" src=""/></div>
+                <div class="shadow"></div>
+                <div class="name" id="parent_recommend_3_txt"></div>
+            </div>
+            <div class="item" style="left: 985px;" id="parent_recommend_4">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_4_pic" src=""/></div>
+                <div class="shadow"></div>
+                <div class="name" id="parent_recommend_4_txt"></div>
+            </div>
+        </div>
+        <div class="category">
+            <div class="item" style="left: 60px;" id="parent_recommend_5">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_5_pic" src=""/></div>
+            </div>
+            <div class="item" style="left: 297px;" id="parent_recommend_6">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_6_pic" src=""/></div>
+            </div>
+            <div class="item" style="left: 534px;" id="parent_recommend_7">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_7_pic" src=""/></div>
+            </div>
+            <div class="item" style="left: 771px;" id="parent_recommend_8">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_8_pic" src=""/></div>
+            </div>
+            <div class="item" style="left: 1008px;" id="parent_recommend_9">
+                <div class="focus"></div>
+                <div class="pic"><img id="parent_recommend_9_pic" src=""/></div>
+            </div>
+        </div>
+    </div>
+    <!--特别策划-->
+    <div class="special_plan_title"></div>
+    <div class="special_plan_area" id="special_plan_area">
+        <div class="h_long_poster">
+            <div class="item" id="special_plan_0">
+                <div class="focus"></div>
+                <div class="pic"><img id="special_plan_0_pic" src=""/></div>
+                <div class="name" id="special_plan_0_txt"></div>
+            </div>
+        </div>
+        <div class="topic_list">
+            <div class="item" style="left: 22px;" id="special_plan_1">
+                <div class="focus"></div>
+                <div class="pic"><img id="special_plan_1_pic" src=""/></div>
+                <div class="name" id="special_plan_1_txt"></div>
+            </div>
+            <div class="item" style="left: 417px;" id="special_plan_2">
+                <div class="focus"></div>
+                <div class="pic"><img id="special_plan_2_pic" src=""/></div>
+                <div class="name" id="special_plan_2_txt"></div>
+            </div>
+            <div class="item" style="left: 812px;" id="special_plan_3">
+                <div class="focus"></div>
+                <div class="pic"><img id="special_plan_3_pic" src=""/></div>
+                <div class="name" id="special_plan_3_txt"></div>
+            </div>
+        </div>
+    </div>
+    <div class="back_top">
+        <div class="item" id="back_top">
+            <div class="focus"></div>
+            <div class="pic"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/xepg.min.js"></script>
+<script type="text/javascript" src="../js/view_utils.js"></script>
+<script type="text/javascript" src="../js/presenter/home_presenter.js"></script>
+<script type="text/javascript" src="../js/model/model_transmit.js"></script>
+<script type="text/javascript" src="../js/vas_log.js"></script>
+<script type="text/javascript" src="../js/utils.js"></script>
+<script type="text/javascript" src="../js/user_model.js"></script>
+<script type="text/javascript" src="../js/special_views.js"></script>
+<script type="text/javascript" src="../js/player_util.js"></script>
+<script>
+    var g_param = XEpg.My.parseUrl();
+    var firstFocus = g_param.currentId||"recommend_list_2";
+
+    var mediaUrl = null;
+
+    var scroller = null;//滚动条
+    var top_area = null;//第一屏顶部
+    var top_area_scroll = null;
+    var recommend_list = null;//第一屏推荐列表
+    var reco_nav_scroll = null;
+    var navigation = null;//导航栏
+
+    var movie_theatre_area = null;//叮当影院
+    var small_video = null;//小视频窗
+    var channel_list = null;//频道列表
+
+    var recommend_for_u_area = null;//为您推荐，单纯做滚动定位
+    var recommend_for_u = null;//为您推荐
+
+    var star_album = null;//明星专辑
+
+    var hot_area = null;//最新热播
+
+    var baby_game_area = null;//宝贝趣玩
+
+    var cartoon_movie_area = null;//动漫电影大片
+
+    var parent_recommend_area = null;//爸妈信赖的宝贝动画
+
+    var special_plan_area = null;//特别策划
+
+    var back_top = null;//用于滚动位置
+
+    var time_in = new Date();
+
+    var presenter = null;
+
+    var userModel = null;
+
+    var returnParams = null;//订购返回参数
+
+    var background_img = null;
+
+    var background_player = null;//背景播放
+    var freeSeconds = 0;//试看时间   剧集300s 电影120s
+
+    var player_timer = null;//背景播放器定时器
+    var reco_nav_scroll_timer = null;//recommend nav to_down 滚动定时器
+
+    var isScrollAnimation = true;
+
+    var log_view = null;
+
+    var entranceName = "叮当学园-首页";
+
+    var epgdomain = "";//机顶盒域名参数
+    if (typeof(Authentication) == "object"){
+        if("CTCSetConfig" in Authentication) {
+            epgdomain = Authentication.CTCGetConfig("EPGDomain");
+        } else {
+			epgdomain = Authentication.CUGetConfig("EPGDomain");
+        }
+    };
+    var requrl = "";
+    var playUrl = "";
+    var host = epgdomain.substr( 0, epgdomain.lastIndexOf("/"));
+
+    window.onload = function () {
+        initView();
+        setView();
+        initUtil();
+    };
+
+    var initView = function () {
+        View.init(firstFocus);
+
+        log_view = LogView.createNew("log_view");
+        log_view.scrollAnimation = false;
+        log_view.show();
+
+        scroller = ScrollView.createNew("scroller");
+        scroller.scrollSpeed = 200;
+
+        top_area = AreaView.createNew("top_area");
+        top_area.addChilds(["order","town_module","record","collection","search"]);
+
+        top_area_scroll = ScrollView.createNew("top_area_scroll");
+        top_area_scroll.setScrollTop(35);
+        top_area_scroll.scrollSpeed = 40;
+
+        recommend_list = ListView.createNew("recommend_list");
+        recommend_list.scrollSpeed =40;
+        recommend_list.orientation = View.horizontal;
+        recommend_list.isLoop = false;
+        recommend_list.hasMarquee = true;
+        recommend_list.isFocusCenter = true;
+        recommend_list.setBuildViewItem(function (idPrefix,index,data) {
+           var div = '<div class="item" style="left: '+(298*index)+'px;" id="'+(idPrefix+index)+'">\n' +
+               '                <div class="focus"></div>\n' +
+               '                <div class="pic"><img src="'+data.pic+'"/></div>\n' +
+               '                <div class="name" id="'+(recommend_list.needMarqueeIdPrefix+index)+'">'+data.title+'</div>\n' +
+               '            </div>';
+           return div;
+        });
+
+        reco_nav_scroll = ScrollView.createNew("reco_nav_scroll");
+        reco_nav_scroll.scrollSpeed = 50;
+
+        navigation = ListView.createNew("navigation");
+        navigation.orientation = View.horizontal;
+        navigation.setBuildViewItem(function (idPrefix,index,data) {
+           var div = '<div class="item" style="left: '+(131*index)+'px;" id="'+(idPrefix+index)+'">\n' +
+               '                <div class="focus"></div>\n' +
+               '                <div class="pic"><img src="'+data.pic+'"/></div>\n' +
+               '            </div>';
+           return div;
+        });
+
+        /*channel_list = GridView.createNew("channel_list");
+        channel_list.isLoop = false;
+        channel_list.setBuildGridViewItem(function (idPrefix,index,row,col,data) {
+            var div = '<div class="item" style="top: '+(196*row)+'px;left: '+(198*col)+'px;" id="'+(idPrefix+index)+'">\n' +
+                '                <div class="focus"></div>\n' +
+                '                <div class="pic"><img src="../images/demopic/movie_theatre_01.png"/></div>\n' +
+                '            </div>';
+            return div;
+        });
+
+        movie_theatre_area = AreaView.createNew("movie_theatre_area");
+        movie_theatre_area.addChilds(["small_video","channel_list"]);*/
+
+        recommend_for_u_area = View.createNew("recommend_for_u_area");
+        recommend_for_u = View.createNew("recommend_for_u");
+        recommend_for_u.bindTextView(TextView.createNew("recommend_for_u_name"));
+
+        /*star_album = GridView.createNew("star_album");
+        star_album.isLoop = false;
+        star_album.col = 6;
+        star_album.setBuildGridViewItem(function (idPrefix,index,row,col,data) {
+            var div = '<div class="item" style="top: '+(52+row*234)+'px;left: '+(53+col*205)+'px;" id="'+(idPrefix+index)+'">\n' +
+                '            <div class="focus" style="background: url('+data.pic_focus+')"></div>\n' +
+                '            <div class="pic" style="position: absolute;top: 26px;"><img src="'+data.pic+'"/></div>\n' +
+                '        </div>';
+            return div;
+        });*/
+        star_album = RecycleView.createNew("star_album");
+        star_album.isLoop = false;
+        star_album.col = 6;
+        star_album.setAdapter(function (idPrefix,index,row,col,data) {
+            var div = '<div class="item" style="top: '+(52+row*234)+'px;left: '+(53+col*205)+'px;" id="'+(idPrefix+index)+'">\n' +
+                '            <div class="focus" style="background: url('+data.pic_focus+')"></div>\n' +
+                '            <div class="pic" style="position: absolute;top: 26px;"><img src="'+data.pic+'"/></div>\n' +
+                '        </div>';
+            return div;
+        });
+
+        hot_area = AreaView.createNew("hot_area");
+        hot_area.addChilds(["hot_0","hot_1","hot_2","hot_3","hot_4","hot_5","hot_6","hot_7"]);
+        hot_area.bindTextViews(["hot_0_txt","hot_1_txt","hot_2_txt","hot_3_txt","hot_4_txt",
+            "hot_5_txt","hot_6_txt","hot_7_txt"]);
+
+        //宝贝趣玩
+        /*baby_game_area = AreaView.createNew("baby_game_area");
+        baby_game_area.addChilds(["baby_game_0","baby_game_1","baby_game_2",
+            "baby_game_3","baby_game_4","baby_game_5","baby_game_6"])
+        baby_game_area.bindTextViews(["","baby_game_1_txt","baby_game_2_txt",
+            "baby_game_3_txt","baby_game_4_txt","baby_game_5_txt","baby_game_6_txt"]);*/
+
+        cartoon_movie_area = AreaView.createNew("cartoon_movie_area");
+        cartoon_movie_area.addChilds(["cartoon_movie_0","cartoon_movie_1","cartoon_movie_2",
+            "cartoon_movie_3","cartoon_movie_4","cartoon_movie_5",
+            "cartoon_movie_6","cartoon_movie_7"]);
+        cartoon_movie_area.bindTextViews(["cartoon_movie_0_txt","cartoon_movie_1_txt","cartoon_movie_2_txt",
+            "cartoon_movie_3_txt","cartoon_movie_4_txt","cartoon_movie_5_txt",
+            "cartoon_movie_6_txt","cartoon_movie_7_txt"]);
+
+
+        parent_recommend_area = AreaView.createNew("parent_recommend_area");
+        for(var i=0;i<10;i++){
+            parent_recommend_area.addChild("parent_recommend_"+i);
+        }
+        parent_recommend_area.bindTextViews(["parent_recommend_0_txt","parent_recommend_1_txt",
+            "parent_recommend_2_txt","parent_recommend_3_txt","parent_recommend_4_txt"]);
+
+        special_plan_area = AreaView.createNew("special_plan_area");
+        for(var i=0;i<4;i++){
+            special_plan_area.addChild("special_plan_"+i);
+        }
+        special_plan_area.bindTextViews(["special_plan_0_txt","special_plan_1_txt",
+            "special_plan_2_txt","special_plan_3_txt"]);
+
+        back_top = View.createNew("back_top");
+    };
+
+    var setView = function () {
+        top_area.setFocusToDown(recommend_list);
+
+        recommend_list.setFocusChange(top_area,navigation,null,null);
+        overrideRecommendListKey();//重写按键
+
+        navigation.setFocusChange(recommend_list,recommend_for_u,null,null);
+
+        recommend_for_u.setFocusChange(navigation,function () {
+            star_album.childViews[0].requestFocus();
+        },null,null);
+
+        /*small_video =  movie_theatre_area.getChildViewById("small_video");
+        small_video.setFocusChange(navigation,recommend_for_u,null,channel_list);
+        channel_list.setFocusChange(navigation,recommend_for_u,small_video,null);*/
+
+        star_album.setFocusChange(recommend_for_u,hot_area,null,null);
+
+        hot_area.setFocusChange(function () {
+            star_album.childViews[6].requestFocus();
+        },cartoon_movie_area,null,null);
+
+        hot_area.childViews[0].setFocusToDown(function () {
+            hot_area.childViews[2].requestFocus();
+        });
+        hot_area.childViews[1].setFocusToDown(function () {
+            hot_area.childViews[5].requestFocus();
+        });
+        //baby_game_area.setFocusChange(hot_area,cartoon_movie_area,null,null);
+
+        cartoon_movie_area.setFocusChange(null,parent_recommend_area,null,null);
+        cartoon_movie_area.childViews[0].setFocusToUp(function () {
+            hot_area.childViews[2].requestFocus();
+        });
+        cartoon_movie_area.childViews[1].setFocusToUp(function () {
+            hot_area.childViews[5].requestFocus();
+        });
+        cartoon_movie_area.childViews[0].setFocusToDown(function () {
+            cartoon_movie_area.childViews[2].requestFocus();
+        });
+        cartoon_movie_area.childViews[1].setFocusToDown(function () {
+            cartoon_movie_area.childViews[5].requestFocus();
+        });
+        cartoon_movie_area.childViews[2].setFocusToDown(cartoonToDown);
+        cartoon_movie_area.childViews[3].setFocusToDown(cartoonToDown);
+        cartoon_movie_area.childViews[4].setFocusToDown(cartoonToDown);
+        cartoon_movie_area.childViews[5].setFocusToDown(cartoonToDown);
+        cartoon_movie_area.childViews[6].setFocusToDown(cartoonToDown);
+        cartoon_movie_area.childViews[7].setFocusToDown(cartoonToDown);
+
+        parent_recommend_area.setFocusChange(function () {
+            cartoon_movie_area.childViews[2].requestFocus();
+        },special_plan_area,null,null);
+
+        special_plan_area.setFocusChange(function () {
+            parent_recommend_area.childViews[5].requestFocus();
+        },recommend_list,null,null);
+        special_plan_area.childViews[0].setFocusToDown(function () {
+            special_plan_area.childViews[1].requestFocus();
+        });
+
+        //宝贝趣玩 修正焦点规则
+        //baby_game_area.getChildViewById("baby_game_0").setFocusToUp(baby_game_area.nextUp);
+        //动漫电影大片 修正焦点规则
+        cartoon_movie_area.getChildViewById("cartoon_movie_2").setFocusToLeft(null);
+        cartoon_movie_area.getChildViewById("cartoon_movie_7").setFocusToRight(null);
+
+        //爸妈信赖的宝贝动画 修正焦点规则
+        parent_recommend_area.getChildViewById("parent_recommend_5").setFocusToLeft(null);
+        parent_recommend_area.getChildViewById("parent_recommend_9").setFocusToRight(null);
+        //特别策划 修正焦点规则
+        special_plan_area.getChildViewById("special_plan_1").setFocusToLeft(null);
+        special_plan_area.getChildViewById("special_plan_3").setFocusToRight(null);
+        //最新热播 修正焦点规则
+        hot_area.getChildViewById("hot_2").setFocusToLeft(null);
+        hot_area.getChildViewById("hot_7").setFocusToRight(null);
+
+        //焦点监听
+        scroller.setOnScrollListener(onScrollListener);
+        top_area.setOnChildFocusChangeListener(onFocusChangeListener);
+        recommend_list.setOnItemFocusChangeListener(onItemFocusChangeListener_recommend_list);
+        navigation.setOnItemFocusChangeListener(onItemFocusChangeListener_navigation);
+
+        // movie_theatre_area.setOnChildFocusChangeListener(onFocusChangeListener_movie_theatre);
+        // channel_list.setOnItemFocusChangeListener(onItemFocusChangeListener_channel_list);
+
+        recommend_for_u.setOnFocusChangeListener(onFocusChangeListener_recommend_for_u);
+
+        star_album.setOnChildFocusChangeListener(onChildFocusChangeListener_star_album);
+
+        hot_area.setOnChildFocusChangeListener(onFocusChangeListener_other);
+
+        //baby_game_area.setOnChildFocusChangeListener(onFocusChangeListener_other);
+
+        cartoon_movie_area.setOnChildFocusChangeListener(onFocusChangeListener_other);
+
+        parent_recommend_area.setOnChildFocusChangeListener(onFocusChangeListener_other);
+
+        special_plan_area.setOnChildFocusChangeListener(onFocusChangeListener_other);
+
+        //点击监听
+        top_area.setOnChildClickListener(onChildClickListener_top_area);
+        recommend_list.setOnItemClickListener(onItemClickListener_recommend_list);
+        navigation.setOnItemClickListener(onItemClickListener_navigation);
+        // channel_list.setOnItemClickListener(onItemClickListener_channel_list);
+        star_album.setOnChildClickListener(onChildClickListener_star_album);
+
+        recommend_for_u.setOnClickListener(onClickListener_recommend_for_u);
+        hot_area.setOnChildClickListener(onClickListener_common);
+        //baby_game_area.setOnChildClickListener(onClickListener_common);
+        cartoon_movie_area.setOnChildClickListener(onClickListener_common);
+        parent_recommend_area.setOnChildClickListener(onClickListener_parent_recommend_area);
+        special_plan_area.setOnChildClickListener(onClickListener_common);
+    };
+
+    var initUtil = function () {
+        userModel = UserModel.createNew();
+        if (userModel.auth()){
+            View.$$("order").remove();
+        }
+        background_player = Player.createNew();
+        if (background_player){
+            background_player.setOnPlayEventListener(onPlayEventListener);
+            background_player.setOnPositionChangeListener(onPositionChangeListener);
+        }
+        presenter = HomePresenter.createNew(homeView);
+        presenter.onload();
+
+        Log.init(UserModel.spCode,userModel.info.stbID,userModel.info.userID);
+    };
+
+    /**
+     * 重写recommendList上下左右按键
+     * 当悬浮层隐藏时按键只执行显示悬浮层事件.
+     */
+    var overrideRecommendListKey = function () {
+        var up = recommend_list.horizontalKey.up;
+        var down = recommend_list.horizontalKey.down;
+        var left = recommend_list.horizontalKey.left;
+        var right = recommend_list.horizontalKey.right;
+
+        recommend_list.horizontalKey.up = function () {
+            if(reco_nav_scroll.getScrollTop()>=312){
+                up();
+            }else{
+                show_popover();
+            }
+        };
+
+        recommend_list.horizontalKey.down = function () {
+            if(reco_nav_scroll.getScrollTop()>=312){
+                down();
+            }else{
+                show_popover();
+            }
+        };
+
+        recommend_list.horizontalKey.left = function () {
+            if(reco_nav_scroll.getScrollTop()>=312){
+                left();
+            }else{
+                show_popover();
+            }
+        };
+
+        recommend_list.horizontalKey.right = function () {
+            if(reco_nav_scroll.getScrollTop()>=312){
+                right();
+            }else{
+                show_popover();
+            }
+        };
+    };
+
+    var cartoonToDown = function () {
+        parent_recommend_area.childViews[0].requestFocus();
+    };
+
+    //悬浮层隐藏
+    var show_popover = function () {
+        if(reco_nav_scroll_timer){
+            clearTimeout(reco_nav_scroll_timer);
+        }
+        top_area_scroll.scrollVerticalTo(35);//224
+        reco_nav_scroll.scrollVerticalTo(365);
+        reco_nav_scroll_timer = setTimeout(function () {
+            top_area_scroll.scrollVerticalTo(403);
+            reco_nav_scroll.scrollVerticalTo(0);
+        },10000);
+    };
+
+    var onPlayEventListener = {
+        onPlayStart:function () {
+        },
+        onPlayComplete:function () {
+            log_view.i("完成播放");
+            View.$$("background").src = "../images/home/index_bg.png";
+            background_player.stop();//此处播放器必须调用stop(),否则下面自动切换预览代码会连续切两次
+
+            if(View.FocusView.id.indexOf(recommend_list.idPrefix) != -1){
+                for(var i=0;i<recommend_list.itemViews.length;i++){
+                    if(View.FocusView.id == recommend_list.itemViews[i].id){
+                        // log_view.i("focusID:"+View.FocusView.id+"id:"+recommend_list.itemViews[i].id);
+                        if(i == recommend_list.itemViews.length - 1){
+                            recommend_list.itemViews[0].requestFocus();
+                        }else{
+                            recommend_list.itemViews[i+1].requestFocus();
+                        }
+                        return;
+                    }
+                }
+            }else{
+                previewVideo();
+            }
+        },
+        onPlayStop:function () {//切换视频或按首页键触发
+
+        },
+        onPlayError:function () {
+            setTimeout(function () {
+                log_view.i("异常播放，播放下一集");
+
+            },200);
+        }
+    };
+
+    var onPositionChangeListener = function (position,duration) {
+        //预览视频按照试看时间
+        if (position > freeSeconds){
+            View.$$("background").src = "../images/home/index_bg.png";
+            background_player.stop();
+
+            if(View.FocusView.id.indexOf(recommend_list.idPrefix) != -1){
+                for(var i=0;i<recommend_list.itemViews.length;i++){
+                    if(View.FocusView.id == recommend_list.itemViews[i].id){
+                        if(i == recommend_list.itemViews.length - 1){
+                            recommend_list.itemViews[0].requestFocus();
+                        }else{
+                            recommend_list.itemViews[i+1].requestFocus();
+                        }
+                        return;
+                    }
+                }
+            }else{
+                previewVideo();
+            }
+        }
+    };
+
+    //修正明星专辑焦点驻留
+    var onScrollListener = {
+            /**
+             * 开始滚动
+             * @param view 被监听的view
+             * @param x 当前横坐标
+             * @param y 当前纵坐标
+             */
+            onStartScroll: function (view, x, y) {
+                 //console.log("开始滚动：view.id:" + view.id + ",x:" + x + ",y:" + y);
+            },
+            /**
+             * 结束滚动
+             * @param view
+             * @param x
+             * @param y
+             */
+            onEndScroll: function (view, x, y) {
+                // console.log("结束滚动：view.id:" + view.id + ",x:" + x + ",y:" + y);
+                if(y == 0){
+                    star_album.selectView = null;
+                }
+            },
+            /**
+             * 滚动中
+             * @param view
+             * @param x
+             * @param y
+             */
+            onScrolling: function (view, x, y) {
+                // console.log("滚动中view.id:" + view.id + ",x:" + x + ",y:" + y);
+            }
+    }
+
+    /**
+     * 第一屏的顶部和叮当小镇入口的焦点变化监听
+     */
+    var onFocusChangeListener = function (view,hasFocus) {
+        if(hasFocus){
+            scroller.scrollVerticalTo(0);
+        }
+    };
+
+    /**
+     *  叮当影院焦点变化监听
+     */
+    /*var onFocusChangeListener_movie_theatre = function (view,hasFocus) {
+        if(hasFocus){
+            scroller.scrollVerticalTo(657);
+            setTimeout(function () {
+                if(View.FocusView.id.indexOf("small_video")>-1){
+                    View.$$("background").src = "../images/home/movie_theatre_bg.png";
+                    View.$$("to_down").style.display = "none";
+                }
+            },500);
+        }
+    };*/
+
+    /**
+     * 叮当影院频道焦点变化监听
+     */
+    /*var onItemFocusChangeListener_channel_list = function (position,view,hasFocus) {
+        if(hasFocus){
+            scroller.scrollVerticalTo(657);
+            setTimeout(function () {
+                if(View.FocusView.id.indexOf("channel_list")>-1){
+                    View.$$("background").src = "../images/home/movie_theatre_bg.png";
+                    View.$$("to_down").style.display = "none";
+                }
+            },500);
+        }
+    };*/
+
+	var change_timer = null;
+    /**
+     * 第一屏的推荐列表焦点变化监听
+     */
+    var onItemFocusChangeListener_recommend_list = function (position,view,hasFocus) {
+		if(hasFocus){
+            show_popover();
+			scroller.setScrollTop(0);
+            if(View.keyDirection==View.keyLeft || View.keyDirection==View.keyRight ){
+                if (background_player && background_player.isPlaying){
+                    background_player.stop();
+					if(change_timer){
+						clearTimeout(change_timer);
+					}
+					change_timer = setTimeout(previewVideo,1000);
+                }
+            }else{
+				if (View.keyDirection!=View.keyUp){
+                    previewVideo();
+                }
+			}
+        }else{
+            if (reco_nav_scroll_timer){
+                clearTimeout(reco_nav_scroll_timer);
+            }
+            if (View.keyDirection==View.keyDown || View.keyDirection==View.keyUp ){
+                view.setSelectStyle();
+            }
+        }
+    };
+
+    var onItemFocusChangeListener_navigation = function (position,view,hasFocus) {
+        if(hasFocus){
+            scroller.scrollVerticalTo(0);
+            reco_nav_scroll.setScrollTop(365);
+            previewVideo();
+        }else{
+            if (View.keyDirection == View.keyDown) {
+                try{
+                    background_player.pause();
+                    //及时清理定时器,防止切屏过快导致暂停后仍然播放或遮层消失的问题
+                    if (background_timer) clearTimeout(background_timer);
+                    if (player_timer) clearTimeout(player_timer);
+                }catch (e) {}
+            }
+        }
+    };
+
+    var onFocusChangeListener_recommend_for_u = function (view,hasFocus) {
+        if(hasFocus){
+            if(g_param.selectViewId && isScrollAnimation){
+                scroller.setScrollTop(760);
+                isScrollAnimation = false;
+            }else{
+                scroller.scrollVerticalTo(760);
+            }
+            if(View.FocusView.id.indexOf("recommend_for_u")>-1 && background_img){
+                View.$$("background").src = background_img[0].picUrl;
+            }
+        }
+    }
+
+    /**
+     * 第一屏和叮当影院以外的焦点变化监听
+     */
+    var onFocusChangeListener_other = function (view,hasFocus) {
+        if(hasFocus){
+            if(g_param.selectViewId && isScrollAnimation){
+                scroller.scrollAnimation = false;
+            }
+            /* if(view.id.indexOf("recommend_for_u")==0){
+                View.scrollVerticalToView(scroller,recommend_for_u_area,View.scrollStart);
+            }else  */
+            if(view.id.indexOf("star_album")==0){
+                if(background_img){
+                    View.$$("background").src = background_img[0].picUrl;
+                }
+                View.scrollVerticalToView(scroller,star_album,View.scrollCenter);
+            }else if(view.id.indexOf("hot")==0){
+                if(background_img) {
+                    View.$$("background").src = background_img[1].picUrl;
+                }
+                View.scrollVerticalToView(scroller,hot_area,View.scrollCenter);
+            }else if(view.id.indexOf("cartoon_movie")==0){
+                if(background_img) {
+                    View.$$("background").src = background_img[2].picUrl;
+                }
+                View.scrollVerticalToView(scroller,cartoon_movie_area,View.scrollCenter);
+            }else if(view.id.indexOf("parent_recommend")==0){
+                if(background_img) {
+                    View.$$("background").src = background_img[3].picUrl;
+                }
+                View.scrollVerticalToView(scroller,parent_recommend_area,View.scrollCenter);
+            }else if(view.id.indexOf("special_plan_0")==0){
+                if(background_img) {
+                    View.$$("background").src = background_img[4].picUrl;
+                }
+                View.scrollVerticalToView(scroller,special_plan_area,View.scrollCenter);
+            }else if(view.id.indexOf("special_plan")==0){
+                View.scrollVerticalToView(scroller,back_top,View.scrollCenter);
+            }
+            //原处判断:hot 下方
+            /*if(view.id.indexOf("baby_game")==0){
+                View.scrollVerticalToView(scroller,baby_game_area,View.scrollCenter);
+            }else */
+
+            if(g_param.selectViewId && isScrollAnimation){
+                scroller.scrollAnimation = true;
+                isScrollAnimation = false;
+            }
+        }
+    };
+
+    /**
+     * 明星专辑焦点变化监听
+     */
+    var onChildFocusChangeListener_star_album = function (view,hasFocus) {
+        onFocusChangeListener_other(view,hasFocus);
+    };
+
+    /**
+     * 顶部按钮点击监听
+     */
+    var onChildClickListener_top_area = function (view) {
+        if(background_player){
+           background_player.destroy();
+        }
+        switch (view.id) {
+            case "order":
+                returnParams = "pageType=home&userID=" + userModel.info.userID +
+                    "&selectViewId=" + recommend_list.selectView.id;
+                var pageJumpUtil = PageUtil.createNew();
+                var extensionField = [
+                    {key:"currentId",value:view.id},
+                    {key:"selectViewId",value:recommend_list.selectView.id}
+                ];
+                pageJumpUtil.addBackDatas(extensionField);
+                pageJumpUtil.gotoPage("order.html?returnParams="+escape(returnParams));
+                break;
+            case "town_module":
+                var pageJumpUtil = PageUtil.createNew();
+                var extensionField = [
+                    {key:"currentId",value:view.id},
+                    {key:"selectViewId",value:recommend_list.selectView.id}
+                ];
+                pageJumpUtil.addBackDatas(extensionField);
+                pageJumpUtil.gotoPage("town_home.html");
+                break;
+            case "search":
+                var pageJumpUtil = PageUtil.createNew();
+                var extensionField = [
+                    {key:"currentId",value:view.id},
+                    {key:"selectViewId",value:recommend_list.selectView.id}
+                ];
+                pageJumpUtil.addBackDatas(extensionField);
+                pageJumpUtil.gotoPage("search.html");
+                break;
+            case "record":
+                var pageJumpUtil = PageUtil.createNew();
+                var extensionField = [
+                    {key:"currentId",value:view.id},
+                    {key:"selectViewId",value:recommend_list.selectView.id}
+                ];
+                pageJumpUtil.addBackDatas(extensionField);
+                pageJumpUtil.gotoPage("personal_center.html?currentId=play_record");
+                break;
+            case "collection":
+                var pageJumpUtil = PageUtil.createNew();
+                var extensionField = [
+                    {key:"currentId",value:view.id},
+                    {key:"selectViewId",value:recommend_list.selectView.id}
+                ];
+                pageJumpUtil.addBackDatas(extensionField);
+                pageJumpUtil.gotoPage("personal_center.html?currentId=collection_record");
+                break;
+        }
+    };
+
+    /**
+     * 首屏视频预览播放,
+     * 播放驻留视频内容
+     * 默认播放该视频的第一集;
+     */
+    function previewVideo() {
+        var data;
+
+        if (!background_player){
+            return;
+        }
+        //View.FocusView.id.indexOf(navigation.idPrefix) >=0 判断是考虑到盒子滚动性能不好时，scrollTop还没滚动到0时已进入previewVideo导致无法恢复播放
+        log_view.e("播放状态："+background_player.isPlaying);
+		if((scroller.getScrollTop() == 0 || (View.FocusView.id.indexOf(navigation.idPrefix) >=0)) && !background_player.isPlaying){
+            log_view.e("开始if判断");
+            if (View.FocusView.id.indexOf(recommend_list.idPrefix) != -1 && recommend_list.selectView.id != View.FocusView.id){
+                View.$$("background").src = "../images/home/index_bg.png";
+                log_view.e("第1个if");
+                data = View.FocusView.data.contentInfo;
+                presenter.getVideoPath(data.code);
+            }else if (recommend_list.selectView!=null&&recommend_list.selectView.id!=null){
+				View.$$("background").src = "../images/home/index_bg.png";
+                log_view.e("第2个if:isPlaying:"+background_player.isPlaying+";mode:"+background_player.play_mode);
+                //播放驻留焦点视频
+                if(background_player.play_mode == 1){
+                    if (player_timer) clearTimeout(player_timer);
+                    player_timer = setTimeout(function () {
+                        View.$$("background").src = "/";
+                        background_player.resume();
+                    },1000);
+                }else{
+                    log_view.e("第3个iff:isPlaying:"+background_player.isPlaying);
+                    data = recommend_list.selectView.data.contentInfo;
+                    if(!background_player.isPlaying && (View.FocusView.id.indexOf(star_album.idPrefix) < 0)){
+						presenter.getVideoPath(data.code);
+                    }
+                }
+            }else if (View.FocusView.id.indexOf(recommend_list.idPrefix) != -1){
+                log_view.e("第4个if:isPlaying:"+background_player.isPlaying);
+                if(!background_player.isPlaying){
+                    data = View.FocusView.data.contentInfo;
+                    presenter.getVideoPath(data.code);
+                }
+            }
+        }
+
+    };
+
+    /**
+     *通用点击事件
+     */
+    var onClickListener_common = function (view) {
+        var extensionField = {
+            selectViewId:recommend_list.selectView.id
+        };
+        var recommendJumpUtil = RecommendJumpUtil.createNew();
+        recommendJumpUtil.gotoPageByRecommend(view.data,extensionField);
+    };
+
+    /**
+     * 推荐列表点击事件
+     */
+    var onItemClickListener_recommend_list = function (position,view,data) {
+        if(reco_nav_scroll.getScrollTop() >= 312){
+            if(background_player){
+                View.$$("background").src = "../images/home/index_bg.png";
+                background_player.destroy();
+            }
+            setTimeout(function () {
+                var recommendJumpUtil = RecommendJumpUtil.createNew();
+                recommendJumpUtil.gotoPageByRecommend(data);
+            },100);
+        }else{
+            show_popover();
+        }
+    };
+
+    /**
+     * 导航栏点击事件
+     */
+    var onItemClickListener_navigation = function (position,view,data) {
+        if(background_player){
+            View.$$("background").src = "../images/home/index_bg.png";
+            background_player.destroy();
+        }
+        var extensionField = {
+            position:position,
+            selectViewId:recommend_list.selectView.id
+        };
+        var recommendJumpUtil = RecommendJumpUtil.createNew();
+		setTimeout(function(){
+			recommendJumpUtil.gotoPageByRecommend(data,extensionField);
+		},100);
+    };
+
+    /*var onItemClickListener_channel_list = function (position,view,data) {
+        var m_backUrl = location.href.indexOf("?") > -1 ? location.href.split("?")[0] : location.href;
+        m_backUrl += '?currentId=' + view.id;
+        XEpg.Util.addNavigationUrl(m_backUrl);
+
+        var recommendRecordsLog = RecommendRecordsLog.createNew("","",data.url,"","",data.name);
+        recommendRecordsLog.send();
+
+        XEpg.Util.gotoPage("movie_theatre.html")
+    };*/
+
+    /**
+     *  为你推荐点击事件
+     */
+    var onClickListener_recommend_for_u = function (view) {
+        var extensionField = {
+            selectViewId:recommend_list.selectView.id
+        };
+        var recommendJumpUtil = RecommendJumpUtil.createNew();
+        recommendJumpUtil.gotoPageByRecommend(view.data[0],extensionField);
+    };
+
+    /**
+     * 明星专辑点击事件
+     */
+    var onChildClickListener_star_album = function (view) {
+        var extensionField = {
+            selectViewId:recommend_list.selectView.id
+        };
+        var recommendJumpUtil = RecommendJumpUtil.createNew();
+        recommendJumpUtil.gotoPageByRecommend(view.data,extensionField);
+    };
+
+    /**
+     * 爸妈信赖点击事件
+     */
+    var onClickListener_parent_recommend_area = function (view) {
+        var index = view.id.replace("parent_recommend_","")
+        console.log(index);
+        if(index<5) {
+            var extensionField = {
+                selectViewId:recommend_list.selectView.id
+            };
+            var recommendJumpUtil = RecommendJumpUtil.createNew();
+            recommendJumpUtil.gotoPageByRecommend(view.data,extensionField);
+        }else{
+            var extensionField = {
+                position:index-5,
+                selectViewId:recommend_list.selectView.id
+            };
+            var recommendJumpUtil = RecommendJumpUtil.createNew();
+            recommendJumpUtil.gotoPageByRecommend(view.data,extensionField);
+        }
+    };
+
+    XEpg.Nav.key_back_event = function(){
+        var time_leave = new Date();
+        var viewLong = (time_leave.getTime()-time_in.getTime())/1000;
+        var viewRecordsLog = ViewRecordsLog.createNew("","","","","叮当学园-首页","",viewLong);
+        viewRecordsLog.send();
+
+        if(background_player){
+            View.$$("background").src = "../images/home/index_bg.png";
+            background_player.destroy();
+        }
+        setTimeout(function () {
+            userModel.exit();
+        },200);
+    };
+
+    var initBackground = function () {
+        console.log(View.FocusView.id);
+        var focusIndex = View.FocusView.id;
+        if(focusIndex.indexOf("recommend_for_u") >= 0){
+            View.$$("background").src = background_img[0].picUrl;
+        }else if(focusIndex.indexOf("star_album") >= 0){
+            View.$$("background").src = background_img[0].picUrl;
+        }else if(focusIndex.indexOf("hot") >= 0){
+            View.$$("background").src = background_img[1].picUrl;
+        }else if(focusIndex.indexOf("cartoon_movie") >= 0){
+            View.$$("background").src = background_img[2].picUrl;
+        }else if(focusIndex.indexOf("parent_recommend") >= 0){
+            View.$$("background").src = background_img[3].picUrl;
+        }else if(focusIndex.indexOf("special_plan") >= 0){
+            View.$$("background").src = background_img[4].picUrl;
+        }
+    };
+
+    var background_timer = null;
+	var mediaUrl_timer = null;
+    var homeView = {
+        loadBackgroundImg:function(data){
+            if(!data||data.length<1){
+                return;
+            }
+            background_img = data;
+            initBackground();
+        },
+
+        loadBackgroundPlayer:function(data){
+			log_view.i("data:"+data);
+            if(!data||data.length<1){
+                return;
+            }
+
+            playUrl = UserModel.pageAddress + "platform.jsp?areaCode="+userModel.info.areaCode;
+            if(userModel.info.areaCode=="zx"){
+                requrl = host + "/MediaService/SmallScreen?ContentID=" + data.thirdCode + "&ReturnURL=" + playUrl + "&ifameFlag=1";
+            }else{
+                requrl = host + "/geturlhw.jsp?code=" + data.thirdCode + "&ReturnURL=" + playUrl;
+            }
+            View.$$("to_platform").src = requrl;
+
+			mediaUrl_timer = setInterval(function () {
+			    mediaUrl = View.$$('to_platform').contentWindow.mediaUrl;
+                if(mediaUrl){
+                    log_view.i("mediaUrl:" + mediaUrl);
+                    if (mediaUrl_timer) {
+                        clearInterval(mediaUrl_timer);
+                    }    
+                    if(background_player){
+                        background_player.play(mediaUrl, 0, 0, 0, 1280, 720);//播放
+                    }
+					View.$$("background").src = "../images/home/index_bg.png";
+					if (background_timer) {
+						clearTimeout(background_timer);
+					}
+					background_timer = setTimeout(function () {
+						View.$$("background").src = "/";
+					},1000);
+                }
+            },100);
+        },
+
+        loadRecommendList:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            reco_nav_scroll.setScrollTop(365);
+            recommend_list.bindData(data);
+            if (g_param.selectViewId){
+                for (var i=0;i<recommend_list.itemViews.length;i++){
+                    if (recommend_list.itemViews[i].id == g_param.selectViewId){
+                        recommend_list.itemViews[i].setSelectStyle();
+                        recommend_list.selectView = recommend_list.itemViews[i];
+                        View.scrollHorizontalToView(recommend_list,recommend_list.itemViews[i],recommend_list.isFocusCenter);
+                        break;
+                    }
+                }
+            }
+            var programType = 0;
+            if(View.FocusView.id.indexOf("recommend_list_") != -1){
+                programType = View.FocusView.data.contentInfo.programType;
+                if(programType == 1){
+                    freeSeconds = 300;
+                }else if(programType == 3){
+                    freeSeconds = 120;
+                }
+            }else if(recommend_list.selectView){
+                programType = recommend_list.selectView.data.contentInfo.programType;
+                if(programType == 1){
+                    freeSeconds = 300;
+                }else if(programType == 3){
+                    freeSeconds = 120;
+                }
+                log_view.i("freeSeconds2:"+freeSeconds);
+                previewVideo();
+            }
+        },
+
+        loadNavigation:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            navigation.bindData(data);
+        },
+        /*loadChannelList:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            channel_list.bindData(data);
+        },*/
+        loadRecommendForU:function(data){
+            if(!data||data.length<1){
+                return;
+            }
+            recommend_for_u.bindData(data);
+            recommend_for_u.textView.setText(data[0].title);
+            View.$$("recommend_for_u_pic").src = data[0].pic;
+        },
+        loadStarAlbum:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            star_album.bindData(data);
+        },
+        loadHot:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            hot_area.bindData(data);
+            for(var i=0;i<data.length;i++){
+                var child = hot_area.childViews[i];
+                child.textView.setText(data[i].title);
+                View.$$("hot_"+i+"_pic").src = data[i].pic;
+            }
+        },
+        /*loadBabyGame:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            baby_game_area.bindData(data);
+            for(var i=1;i<data.length;i++){
+                var child = baby_game_area.childViews[i];
+                child.textView.setText(data[i].title+"加长加长加长加长加长");
+                View.$$("baby_game_"+i+"_pic").src = data[i].pic;
+            }
+        },*/
+        loadCartoonMovie:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            cartoon_movie_area.bindData(data);
+            for(var i=0;i<data.length;i++){
+                var child = cartoon_movie_area.childViews[i];
+                child.textView.setText(data[i].title);
+                View.$$("cartoon_movie_"+i+"_pic").src = data[i].pic;
+            }
+        },
+        loadParentRecommend:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            for(var i=0;i<data.length&&i<5;i++){
+                var child = parent_recommend_area.childViews[i];
+                child.bindData(data[i]);
+                if(i<5){
+                    child.textView.setText(data[i].title);
+                }
+                var HH = new Date().getHours()-0;
+                if(HH<18){
+                    View.$$("parent_recommend_"+i+"_pic").src = data[i].pic;
+                }else{
+                    View.$$("parent_recommend_"+i+"_pic").src = data[i].pic_background;
+                }
+            }
+        },
+        loadParentCatalog:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            for(var i=5;i<10;i++){
+                var child = parent_recommend_area.childViews[i];
+                child.bindData(data[i-5]);
+                View.$$("parent_recommend_"+i+"_pic").src = data[i-5].pic;
+            }
+        },
+        loadSpecialPlan:function (data) {
+            if(!data||data.length<1){
+                return;
+            }
+            special_plan_area.bindData(data);
+            for(var i=0;i<data.length;i++){
+                var child = special_plan_area.childViews[i];
+                if(i<5){
+                    child.textView.setText(data[i].title);
+                }
+                View.$$("special_plan_"+i+"_pic").src = data[i].pic;
+            }
+        }
+    };
+</script>
+</html>
